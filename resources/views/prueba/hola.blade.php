@@ -1,0 +1,1 @@
+<h2>Hola desde la vista con blade</h2>
