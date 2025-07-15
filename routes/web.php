@@ -7,6 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Utilizar solo para implementar la plantilla Bootstrap
+// Route::get('tmp', function(){
+//     return view('admin.layouts.main');
+// });
+
 // Crear una ruta para http://127.0.0.1:8000/hola
 Route::get('hola', function(){
     return 'Hola Mundo';
