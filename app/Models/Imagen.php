@@ -13,4 +13,9 @@ class Imagen extends Model
             'pelicula_id'];           // Indicar campos gestionados
     public $timestamps = true;        // Indicar que laravel va ha gestionar los campos
                                       // created_at y updated_at
+
+    // Una imagen pertenece a una pelicula
+    public function pelicula() {
+        return $this->belongsTo(Pelicula::class);
+    }
 }
