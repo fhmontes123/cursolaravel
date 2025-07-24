@@ -34,6 +34,7 @@
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}" />
     <!--end::Required Plugin(AdminLTE)-->
+    @yield('styles')
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -178,6 +179,7 @@
     </script>
     <!--end::Bootstrap Toasts-->
     <!--end::Script-->
+    @yield('scripts')
 </body>
 <!--end::Body-->
 
