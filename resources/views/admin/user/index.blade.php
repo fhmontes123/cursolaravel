@@ -26,7 +26,7 @@
                         <th>Nombre</th>
                         <th>Correo</th>
                         <th>Tipo</th>
-                        <th>Accion</th>
+                        <th style="width: 180px">Accion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,7 +57,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{-- {{ $users->links('pagination::bootstrap-5') }} --}}
+            {{ $users->links('pagination::bootstrap-5') }}
         </div>
     </div>
 @endsection
