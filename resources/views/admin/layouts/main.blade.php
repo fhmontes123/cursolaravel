@@ -54,6 +54,7 @@
             <div class="app-content-header">
                 <!--begin::Container-->
                 <div class="container-fluid">
+                    @include('admin.layouts.messages')
                     <!--begin::Row-->
                     <div class="row">
                         <div class="col-sm-6">

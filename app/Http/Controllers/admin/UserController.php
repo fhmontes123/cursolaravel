@@ -36,7 +36,10 @@ class UserController extends Controller
         $user = new User($request->all());
         // dd($user);
         $user->save();
-        return 'Usuario registrado';
+        // return 'Usuario registrado';
+        return redirect()
+            ->route('user.index')
+            ->with('success', 'Usuario ' . $user->name . ' creado correctamente');
     }
 
     /**

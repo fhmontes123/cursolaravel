@@ -23,7 +23,7 @@
                 <li class="nav-header">ADMINISTRACION</li>
                 <li class="nav-item">
                     <a href="{{ route('user.index') }}" class="nav-link">
-                        <i class="nav-icon bi bi-download"></i>
+                        <i class="nav-icon fa fa-user"></i>
                         <p>Usuarios</p>
                     </a>
                 </li>
