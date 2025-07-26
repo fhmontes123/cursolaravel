@@ -71,7 +71,7 @@
                     e.preventDefault();
                     const form = e.target.closest('form');
                     Swal.fire({
-                        title: '¿Estás seguro?',
+                        title: '¿Estás seguro de eliminar el registro?',
                         text: "¡No podrás revertir esto!",
                         icon: 'warning',
                         showCancelButton: true,
