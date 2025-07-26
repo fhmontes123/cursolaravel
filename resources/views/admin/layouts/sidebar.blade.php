@@ -27,6 +27,12 @@
                         <p>Usuarios</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('genero.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-gift"></i>
+                        <p>Generos</p>
+                    </a>
+                </li>
             </ul>
             <!--end::Sidebar Menu-->
         </nav>

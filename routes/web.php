@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\GeneroController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\PruebaController;
@@ -88,5 +89,6 @@ Route::get('/prueba/componentes', [PruebaController::class, 'componentesBlade'])
 Route::group(['prefix'=>'admin'], function(){
     Route::get('/home', [HomeController::class, 'index'])->name('admin.home');
     Route::resource('user', UserController::class);
+    Route::resource('genero', GeneroController::class);
 });
 
