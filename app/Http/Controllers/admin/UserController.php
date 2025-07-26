@@ -55,7 +55,10 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // dd($id);
+        $user = User::find($id);
+        // dd($user);
+        return view('admin.user.edit', compact('user'));
     }
 
     /**
@@ -63,7 +66,16 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd($request);
+        $user = User::find($id);
+        // dd($user);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role = $request->role;
+        $user->save();
+        return redirect()
+            ->route('user.index')
+            ->with('success', 'Usuario ' . $user->name . ' editado correctamente');
     }
 
     /**
