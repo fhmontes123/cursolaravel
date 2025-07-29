@@ -21,6 +21,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('/home', [HomeController::class, 'index'])->name('admin.home');
+    Route::resource('user', UserController::class);
+    Route::resource('genero', GeneroController::class);
+});
+
 require __DIR__.'/auth.php';
 
 // Utilizar solo para implementar la plantilla Bootstrap
@@ -98,10 +104,4 @@ Route::get('/prueba/persona', [PruebaController::class, 'datosPersona'])->name('
 // http://127.0.0.1:8000/prueba/componentes
 Route::get('/prueba/componentes', [PruebaController::class, 'componentesBlade'])->name('prueba.componentes');
 
-
-Route::group(['prefix'=>'admin'], function(){
-    Route::get('/home', [HomeController::class, 'index'])->name('admin.home');
-    Route::resource('user', UserController::class);
-    Route::resource('genero', GeneroController::class);
-});
 
