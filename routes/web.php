@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::group(['prefix'=>'admin'], function(){
+Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('admin.home');
     Route::resource('user', UserController::class);
     Route::resource('genero', GeneroController::class);
