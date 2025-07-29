@@ -9,6 +9,7 @@ use App\Models\Imagen;
 use App\Models\Pelicula;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PeliculaController extends Controller
 {
@@ -88,5 +89,33 @@ class PeliculaController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    public function eloquentORM() {
+        $peliculas = Pelicula::with(['user', 'genero', 'directores'])
+            ->where('estreno', '>', now()->subYear())
+            ->orderBy('titulo')
+            ->get();
+        dd($peliculas);
+    }
+
+    public function queryBuilder() {
+        $peliculas = DB::table('peliculas')
+            ->select('peliculas.*', 'users.name as autor')
+            ->join('users', 'peliculas.user_id', '=', 'users.id')
+            ->where('peliculas.costo', '>',10)
+            ->get();
+        dd($peliculas);
+    }
+
+    public function sqlNativo() {
+        $peliculas = DB::select("
+            SELECT p.*, u.name
+            FROM peliculas p
+            JOIN users u ON p.user_id = u.id
+            WHERE p.estreno > ?
+        ", [now()->subYear()]);
+        dd($peliculas);
     }
 }

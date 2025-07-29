@@ -27,6 +27,9 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::resource('user', UserController::class);
     Route::resource('genero', GeneroController::class);
     Route::resource('pelicula', PeliculaController::class);
+    Route::get('/consultas/eloquent', [PeliculaController::class, 'eloquentORM'])->name('admin.consulta.eloquent');
+    Route::get('/consultas/querybuilder', [PeliculaController::class, 'queryBuilder'])->name('admin.consulta.querybuilder');
+    Route::get('/consultas/sqlnativo', [PeliculaController::class, 'sqlNativo'])->name('admin.consulta.sqlnativo');
 });
 
 require __DIR__.'/auth.php';
