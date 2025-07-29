@@ -29,7 +29,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('genero.index') }}" class="nav-link">
-                        <i class="nav-icon fa fa-gift"></i>
+                        <i class="nav-icon fa-solid fa-masks-theater"></i>
                         <p>Generos</p>
                     </a>
                 </li>
