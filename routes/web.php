@@ -8,6 +8,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/plantilla', function () {
+    return view('admin.layouts.main');
+});
+
+
 // Ruta de prueba -> http://localhost:8000
 Route::get('/saludo', function () {
     return 'Hola desde web.php';
